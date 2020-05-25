@@ -52,5 +52,17 @@ public class TicTacToeSpec {
         assertEquals("O", nextPlayer);
     }
 
+    /**
+     * Test 6 es un falso positivo, no hay que hacer nada para cubrir este test
+     * por ende debe ser eliminado
+     */
+/*    @Test
+    public void givenLastTurnWasOPlayerWhenNextPlayerThenXPlayer(){
+        game.play(1, 1);
+        game.play(1, 2);
+        String nextPlayer = game.nextPlayer();
+        assertEquals("X", nextPlayer);
+    }*/
+
 
 }
