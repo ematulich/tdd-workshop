@@ -24,7 +24,11 @@ public class TicTacToeSpec {
         game.play(4, 2);
     }
 
-
+    @Test
+    public void whenYAxisIsOutsideBoardThenRuntimeException(){
+        exception.expect(RuntimeException.class);
+        game.play(1, 5);
+    }
 
 
 }
