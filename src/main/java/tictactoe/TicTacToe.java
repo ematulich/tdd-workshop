@@ -8,19 +8,24 @@ public class TicTacToe {
             {EMPTY_POSITION,EMPTY_POSITION,EMPTY_POSITION}};
 
 
-    public void play(int x, int y) throws RuntimeException{
-        if ( x < 1 || x > 3){
-            throw new RuntimeException("Position selected outside the board");
-        }
-        if ( y < 1 || y > 3){
-            throw new RuntimeException("Position selected outside the board");
-        }
-        int realX = x -1;
+    public void play(final int x, final int y) throws RuntimeException{
+        checkAxisPosition(x, y);
+        int realX = x - 1;
         int realY = y - 1;
-        if (board[realX][realY] != EMPTY_POSITION){
+        placePiece(realX, realY);
+    }
+
+    public void checkAxisPosition(final int x, final int y) throws RuntimeException{
+        if ( !(x >= 1 && x <= 3) || !(y >= 1 && y <= 3)){
+            throw new RuntimeException("Position selected outside the board");
+        }
+    }
+
+    public void placePiece(final int x, final int y) throws RuntimeException{
+        if (board[x][y] != EMPTY_POSITION){
             throw new RuntimeException("Position is occupied");
         }
-        board[realX][realY] = "X";
+        board[x][y] = "X";
     }
 
 }
