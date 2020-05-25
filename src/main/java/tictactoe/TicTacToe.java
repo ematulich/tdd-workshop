@@ -13,9 +13,8 @@ public class TicTacToe {
 
     public void play(final int x, final int y) throws RuntimeException{
         checkAxisPosition(x, y);
-        int realX = x - 1;
-        int realY = y - 1;
-        placePiece(realX, realY);
+        nextPlayer();
+        placePiece(x - 1, y - 1);
     }
 
     public void checkAxisPosition(final int x, final int y) throws RuntimeException{
@@ -28,11 +27,12 @@ public class TicTacToe {
         if (board[x][y] != EMPTY_POSITION){
             throw new RuntimeException("Position is occupied");
         }
-        board[x][y] = "X";
+        board[x][y] = currentPlayer;
     }
 
     public String nextPlayer(){
-        return X_PLAYER.equals(currentPlayer)? O_PLAYER: X_PLAYER;
+        currentPlayer = X_PLAYER.equals(currentPlayer)? O_PLAYER: X_PLAYER;
+        return currentPlayer;
     }
 
 }
