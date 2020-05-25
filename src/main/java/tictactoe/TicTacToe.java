@@ -27,7 +27,7 @@ public class TicTacToe {
         if (board[x][y] != EMPTY_POSITION){
             throw new RuntimeException("Position is occupied");
         }
-        board[x][y] = currentPlayer;
+        board[x][y] = "X";
     }
 
     public String nextPlayer(){
