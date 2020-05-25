@@ -10,9 +10,7 @@ public class TicTacToe {
 
     public void play(final int x, final int y) throws RuntimeException{
         checkAxisPosition(x, y);
-        int realX = x - 1;
-        int realY = y - 1;
-        placePiece(realX, realY);
+        placePiece(x - 1, y - 1);
     }
 
     public void checkAxisPosition(final int x, final int y) throws RuntimeException{
