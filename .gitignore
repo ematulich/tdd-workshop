@@ -31,3 +31,13 @@
 
 # "temporary" build files
 /target
+
+
+build/
+gradlew
+gradle/
+gradlew.bat
+.gradle
+gradle/
+.DS_Store
+.idea
