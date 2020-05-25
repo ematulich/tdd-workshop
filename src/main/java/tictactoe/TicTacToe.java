@@ -1,6 +1,11 @@
 package tictactoe;
 
 public class TicTacToe {
+    private final static String EMPTY_POSITION = "-";
+    private final String[][] board = new String[][]{
+            {EMPTY_POSITION,EMPTY_POSITION,EMPTY_POSITION},
+            {EMPTY_POSITION,EMPTY_POSITION,EMPTY_POSITION},
+            {EMPTY_POSITION,EMPTY_POSITION,EMPTY_POSITION}};
 
 
     public void play(int x, int y) throws RuntimeException{
@@ -10,6 +15,12 @@ public class TicTacToe {
         if ( y < 1 || y > 3){
             throw new RuntimeException("Position selected outside the board");
         }
+        int realX = x -1;
+        int realY = y - 1;
+        if (board[realX][realY] != EMPTY_POSITION){
+            throw new RuntimeException("Position is occupied");
+        }
+        board[realX][realY] = "X";
     }
 
 }

@@ -30,5 +30,12 @@ public class TicTacToeSpec {
         game.play(1, 5);
     }
 
+    @Test
+    public void whenSelectedPositionOccupiedThenRuntimeException(){
+        game.play(1, 1);
+        exception.expect(RuntimeException.class);
+        game.play(1, 1);
+    }
+
 
 }
