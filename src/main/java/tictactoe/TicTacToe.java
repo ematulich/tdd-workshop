@@ -3,8 +3,6 @@ package tictactoe;
 public class TicTacToe {
     private final static String EMPTY_POSITION = "-";
     private final static String X_PLAYER = "X";
-    private final static String O_PLAYER = "O";
-    private String currentPlayer;
     private final String[][] board = new String[][]{
             {EMPTY_POSITION,EMPTY_POSITION,EMPTY_POSITION},
             {EMPTY_POSITION,EMPTY_POSITION,EMPTY_POSITION},
@@ -30,7 +28,7 @@ public class TicTacToe {
     }
 
     public String nextPlayer(){
-        return X_PLAYER.equals(currentPlayer)? O_PLAYER: X_PLAYER;
+        return X_PLAYER;
     }
 
 }
