@@ -42,7 +42,9 @@ public class TicTacToe {
     private boolean winFrom(int x, int y){
         int totalPlayer = 3 * currentPlayer;
         int horizontalLine = board[x][0] + board[x][1] + board[x][2];
-        if (horizontalLine == totalPlayer){
+        int verticalLine = board[0][y] + board[1][y] + board[2][y];
+        if (horizontalLine == totalPlayer
+            || verticalLine == totalPlayer){
             return true;
         }
         return false;
