@@ -116,4 +116,19 @@ public class TicTacToeSpec {
         assertEquals("Player X is the winner", result);
     }
 
+    @Test
+    public void whenPlayAndSecondaryDiagonalLineFilledThenWinner(){
+        /**
+         * 0 - O - x
+         *   - X -
+         * X -   -
+         */
+        game.play(1,3);
+        game.play(1,1);
+        game.play(2,2);
+        game.play(1,2);
+        String result = game.play(3,1);
+        assertEquals("Player X is the winner", result);
+    }
+
 }

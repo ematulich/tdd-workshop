@@ -44,9 +44,11 @@ public class TicTacToe {
         int horizontalLine = board[x][0] + board[x][1] + board[x][2];
         int verticalLine = board[0][y] + board[1][y] + board[2][y];
         int mainDiagonal = board[0][0] + board[1][1] + board[1][1];
+        int secondaryDiagonal = board[0][2] + board[1][1] + board[2][0];
         if (horizontalLine == totalPlayer
                 || verticalLine == totalPlayer
-                || mainDiagonal == totalPlayer) {
+                || mainDiagonal == totalPlayer
+        || secondaryDiagonal == totalPlayer) {
             return true;
         }
         return false;
