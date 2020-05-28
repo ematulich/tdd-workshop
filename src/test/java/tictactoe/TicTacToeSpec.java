@@ -41,15 +41,15 @@ public class TicTacToeSpec {
 
     @Test
     public void givenFirstTurnWhenNextPlayerThenXPlayer(){
-        String nextPlayer = game.nextPlayer();
-        assertEquals("X", nextPlayer);
+        char nextPlayer = game.nextPlayer();
+        assertEquals('X', nextPlayer);
     }
 
     @Test
     public void givenLastTurnWasXPlayerWhenNextPlayerThenOPlayer(){
         game.play(1, 1);
-        String nextPlayer = game.nextPlayer();
-        assertEquals("O", nextPlayer);
+        char nextPlayer = game.nextPlayer();
+        assertEquals('O', nextPlayer);
     }
 
     /**
