@@ -15,7 +15,7 @@ public class TicTacToe {
         if ( y < 1 || y > 3){
             throw new RuntimeException("Position selected outside the board");
         }
-        int realX = x -1;
+        int realX = x - 1;
         int realY = y - 1;
         if (board[realX][realY] != EMPTY_POSITION){
             throw new RuntimeException("Position is occupied");
