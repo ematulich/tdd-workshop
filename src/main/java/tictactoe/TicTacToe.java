@@ -1,11 +1,11 @@
 package tictactoe;
 
 public class TicTacToe {
-    private final static String EMPTY_POSITION = "-";
-    private final static String X_PLAYER = "X";
-    private final static String O_PLAYER = "O";
-    private String currentPlayer;
-    private final String[][] board = new String[][]{
+    private final static char EMPTY_POSITION = '-';
+    private final static char X_PLAYER = 'X';
+    private final static char O_PLAYER = 'O';
+    private char currentPlayer;
+    private final char[][] board = new char[][]{
             {EMPTY_POSITION,EMPTY_POSITION,EMPTY_POSITION},
             {EMPTY_POSITION,EMPTY_POSITION,EMPTY_POSITION},
             {EMPTY_POSITION,EMPTY_POSITION,EMPTY_POSITION}};
@@ -27,11 +27,11 @@ public class TicTacToe {
         if (board[x][y] != EMPTY_POSITION){
             throw new RuntimeException("Position is occupied");
         }
-        board[x][y] = "X";
+        board[x][y] = 'X';
     }
 
-    public String nextPlayer(){
-        currentPlayer = X_PLAYER.equals(currentPlayer)? O_PLAYER: X_PLAYER;
+    public char nextPlayer(){
+        currentPlayer = X_PLAYER  == currentPlayer ? O_PLAYER: X_PLAYER;
         return currentPlayer;
     }
 
