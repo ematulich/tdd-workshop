@@ -19,6 +19,9 @@ public class TicTacToe {
         if (winFrom(x - 1, y - 1)){
             return "Player " + currentPlayer + " is the winner";
         }
+        if(draw()){
+            return "The result is a draw";
+        }
         return "No winner yet";
     }
 
@@ -58,6 +61,17 @@ public class TicTacToe {
             return true;
         }
         return false;
+    }
+
+    private boolean draw(){
+        for(int i = 0; i< BOARD_SIZE; i++){
+            for(int j = 0; j< BOARD_SIZE; j++){
+                if (board[i][j] == EMPTY_POSITION){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
 }
