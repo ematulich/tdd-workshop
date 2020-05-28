@@ -1,8 +1,8 @@
 package tictactoe;
 
 public class TicTacToe {
-    private final static String EMPTY_POSITION = "-";
-    private final String[][] board = new String[][]{
+    private final static char EMPTY_POSITION = '-';
+    private final char[][] board = new char[][]{
             {EMPTY_POSITION,EMPTY_POSITION,EMPTY_POSITION},
             {EMPTY_POSITION,EMPTY_POSITION,EMPTY_POSITION},
             {EMPTY_POSITION,EMPTY_POSITION,EMPTY_POSITION}};
@@ -20,7 +20,7 @@ public class TicTacToe {
         if (board[realX][realY] != EMPTY_POSITION){
             throw new RuntimeException("Position is occupied");
         }
-        board[realX][realY] = "X";
+        board[realX][realY] = 'X';
     }
 
 }
