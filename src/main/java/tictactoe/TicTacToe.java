@@ -4,6 +4,7 @@ public class TicTacToe {
     private final static char EMPTY_POSITION = '-';
     private final static char X_PLAYER = 'X';
     private final static char O_PLAYER = 'O';
+    private final byte BOARD_SIZE = 3;
     private char currentPlayer;
     private final char[][] board = new char[][]{
             {EMPTY_POSITION,EMPTY_POSITION,EMPTY_POSITION},
@@ -40,15 +41,20 @@ public class TicTacToe {
     }
 
     private boolean winFrom(int x, int y) {
-        int totalPlayer = 3 * currentPlayer;
-        int horizontalLine = board[x][0] + board[x][1] + board[x][2];
-        int verticalLine = board[0][y] + board[1][y] + board[2][y];
-        int mainDiagonal = board[0][0] + board[1][1] + board[1][1];
-        int secondaryDiagonal = board[0][2] + board[1][1] + board[2][0];
-        if (horizontalLine == totalPlayer
-                || verticalLine == totalPlayer
-                || mainDiagonal == totalPlayer
-        || secondaryDiagonal == totalPlayer) {
+        int playerTotal = currentPlayer * BOARD_SIZE;
+        int horizontal, vertical, mainDiagonal, secondaryDiagonal;
+        horizontal = vertical = mainDiagonal = secondaryDiagonal = 0;
+        for (int i = 0; i < BOARD_SIZE; i++) {
+            horizontal += board[x][i];
+            vertical += board[i][y];
+            mainDiagonal += board[i][i];
+            secondaryDiagonal += board[i][BOARD_SIZE - i - 1];
+        }
+
+        if (playerTotal == mainDiagonal
+                || playerTotal == secondaryDiagonal
+                || playerTotal == horizontal
+                || playerTotal == vertical) {
             return true;
         }
         return false;
