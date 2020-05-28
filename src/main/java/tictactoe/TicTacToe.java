@@ -11,10 +11,11 @@ public class TicTacToe {
             {EMPTY_POSITION,EMPTY_POSITION,EMPTY_POSITION}};
 
 
-    public void play(final int x, final int y) throws RuntimeException{
+    public String play(final int x, final int y) throws RuntimeException{
         checkAxisPosition(x, y);
         nextPlayer();
         placePiece(x - 1, y - 1);
+        return "No winner yet";
     }
 
     public void checkAxisPosition(final int x, final int y) throws RuntimeException{

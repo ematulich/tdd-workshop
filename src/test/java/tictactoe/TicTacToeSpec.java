@@ -64,5 +64,10 @@ public class TicTacToeSpec {
         assertEquals("X", nextPlayer);
     }*/
 
+    @Test
+    public void whenPlayOnceThenNoWinner(){
+        String result = game.play(1,1);
+        assertEquals("No winner yet", result);
+    }
 
 }
