@@ -41,8 +41,8 @@ public class TicTacToeSpec {
 
     @Test
     public void givenFirstTurnWhenNextPlayerThenXPlayer(){
-        String nextPlayer = game.nextPlayer();
-        assertEquals("X", nextPlayer);
+        char nextPlayer = game.nextPlayer();
+        assertEquals('X', nextPlayer);
     }
 
 
