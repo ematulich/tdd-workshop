@@ -41,15 +41,15 @@ public class TicTacToeSpec {
 
     @Test
     public void givenFirstTurnWhenNextPlayerThenXPlayer(){
-        String nextPlayer = game.nextPlayer();
-        assertEquals("X", nextPlayer);
+        char nextPlayer = game.nextPlayer();
+        assertEquals('X', nextPlayer);
     }
 
     @Test
     public void givenLastTurnWasXPlayerWhenNextPlayerThenOPlayer(){
         game.play(1, 1);
-        String nextPlayer = game.nextPlayer();
-        assertEquals("O", nextPlayer);
+        char nextPlayer = game.nextPlayer();
+        assertEquals('O', nextPlayer);
     }
 
     /**
@@ -68,6 +68,21 @@ public class TicTacToeSpec {
     public void whenPlayOnceThenNoWinner(){
         String result = game.play(1,1);
         assertEquals("No winner yet", result);
+    }
+
+    @Test
+    public void whenPlayAndHorizontalLineFilledThenWinner(){
+        /**
+         * x - x -x
+         * O - O -
+         * - -   -
+         */
+        game.play(1,1);
+        game.play(2,1);
+        game.play(1,2);
+        game.play(2,2);
+        String result = game.play(1,3);
+        assertEquals("Player X is the winner", result);
     }
 
 }
