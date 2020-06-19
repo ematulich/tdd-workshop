@@ -16,13 +16,7 @@ public class TicTacToe {
         checkAxisPosition(x, y);
         nextPlayer();
         placePiece(x - 1, y - 1);
-        if (winFrom(x - 1, y - 1)){
-            return "Player " + currentPlayer + " is the winner";
-        }
-        if(draw()){
-            return "The result is a draw";
-        }
-        return "No winner yet";
+        return evaluateResult(x - 1, y - 1);
     }
 
     private void checkAxisPosition(final int x, final int y) throws RuntimeException{
@@ -72,6 +66,16 @@ public class TicTacToe {
             }
         }
         return true;
+    }
+
+    private String evaluateResult(final int x, final int y) {
+        if (winFrom(x, y)){
+            return "Player " + currentPlayer + " is the winner";
+        }
+        if(draw()){
+            return "The result is a draw";
+        }
+        return "No winner yet";
     }
 
 }
